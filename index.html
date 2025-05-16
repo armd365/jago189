@@ -15,8 +15,50 @@
   <!-- <link rel="stylesheet" href="styles.css" /> -->
   <link rel="stylesheet" href="sahara88bot.site/css/style.css">
   <link rel="icon" type="image/x-icon" href="asset01.source-static.us/assets/rajaplay/jago189/components/logo-Jago189-v2.webp">
+
+  <!-- Switch Theme -->
+   <style>
+  body.light-mode {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  body.light-mode .bg-dark,
+  body.light-mode .panel,
+  body.light-mode .panel-heading,
+  body.light-mode .panel-footer,
+  body.light-mode .secondary-panel {
+    background-color: #f1f1f1 !important;
+    color: #000 !important;
+  }
+
+  body.light-mode .btn {
+    color: #000 !important;
+  }
+
+  body.light-mode a {
+    color: #007bff !important;
+  }
+
+  body.dark-mode {
+    background: #171717 !important;
+    color: #ffffff !important;
+  }
+
+  /* Untuk logo jika ingin diganti */
+  body.light-mode #logo {
+    filter: brightness(0.2) saturate(0.5);
+  }
+</style>
+
 </head>
 <body class="pt-md-5 pb-md-5" style="background: #00C2FF;">
+
+  <!-- Switch Theme -->
+   <div style="position: fixed; top: 10px; right: 10px; z-index: 9999;">
+      <button id="toggleTheme" class="btn btn-sm btn-light">Switch to Dark Mode</button>
+    </div>
+
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" style="background: #171717">
     <div class="modal-dialog">
@@ -206,6 +248,28 @@
       <script src="sahara88bot.site/js/buzz.min.js"></script>
       <script type="text/javascript" src="sahara88bot.site/js/script.js"></script>
 
+      <script>
+  const toggleBtn = document.getElementById("toggleTheme");
+  const body = document.body;
+
+  // Simpan preferensi pengguna di localStorage
+  const currentTheme = localStorage.getItem("theme");
+  if (currentTheme === "light") {
+    body.classList.add("light-mode");
+    toggleBtn.innerText = "Switch to Dark Mode";
+  }
+
+  toggleBtn.addEventListener("click", () => {
+    body.classList.toggle("light-mode");
+    if (body.classList.contains("light-mode")) {
+      toggleBtn.innerText = "Switch to Dark Mode";
+      localStorage.setItem("theme", "light");
+    } else {
+      toggleBtn.innerText = "Switch to Light Mode";
+      localStorage.setItem("theme", "dark");
+    }
+  });
+</script>
 
     </body>
 <!-- Mirrored from bbpvp.github.io/botspacemantexas189/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 May 2025 15:52:09 GMT -->

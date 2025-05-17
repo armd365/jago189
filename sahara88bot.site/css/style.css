@@ -3126,8 +3126,8 @@ fieldset[disabled] .btn {
 .btn-default {
   padding: 16px !important;
   margin-top: 20px;
-  color: #c9c9c9;
-  background-color: #1063b7;
+  color: #000000;
+  background-color: #E50914;
   border-color: none !important;
   border: none !important;
   cursor: pointer;
@@ -5950,7 +5950,6 @@ a.list-group-item-danger.active:focus {
 }
 .panel-default > .panel-heading .badge {
   /* background-color: #0B0B0B; */
-  color: white;
 }
 
 .panel-primary {
